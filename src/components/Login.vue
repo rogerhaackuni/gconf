@@ -9,23 +9,11 @@
           </v-toolbar>
           <v-card-text>
             <v-form>
-              <v-text-field
-                v-model="username"
-                label="Usuário"
-                name="username"
-                prepend-icon="mdi-account"
-                type="text"
-                required
-              ></v-text-field>
+              <v-text-field v-model="username" label="Usuários" name="username" prepend-icon="mdi-account" type="text"
+                required></v-text-field>
 
-              <v-text-field
-                v-model="password"
-                label="Senha"
-                name="password"
-                prepend-icon="mdi-lock"
-                type="password"
-                required
-              ></v-text-field>
+              <v-text-field v-model="password" label="Senha" name="password" prepend-icon="mdi-lock" type="password"
+                required></v-text-field>
             </v-form>
           </v-card-text>
           <v-card-actions>
@@ -54,13 +42,13 @@ export default {
       try {
         // Simulate login process - replace with your actual authentication logic
         await new Promise(resolve => setTimeout(resolve, 1000));
-        
+
         // For demo purposes, accept any username/password combination
         if (this.username && this.password) {
           // Store authentication state
           localStorage.setItem('isAuthenticated', 'true');
           localStorage.setItem('username', this.username);
-          
+
           // Emit login event to parent component
           this.$emit('login-success');
         } else {
